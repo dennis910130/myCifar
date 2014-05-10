@@ -13,7 +13,7 @@ from myUtils import load_cifar_data
 import optparse
 
 def train_cifar(batch_size=128,n_epochs=200,test_frequency=13,learning_rate_base=1, check_point_frequency=5000,show_progress_frequency=100):
-
+    check_point_path = '/home/chensi/mylocal/sichen/data/check_points/'
     parser = optparse.OptionParser()
     parser.add_option("-f",dest="filename", default=None)
 
@@ -107,7 +107,7 @@ def train_cifar(batch_size=128,n_epochs=200,test_frequency=13,learning_rate_base
     else:
         print 'resume training %s...' % options.filename
 
-        params_file = open(options.filename,'rb')
+        params_file = open(check_point_path+options.filename,'rb')
         params = cPickle.load(params_file)
         params_file.close()
         layer1_W = theano.shared(params[0],borrow=True)
@@ -296,7 +296,7 @@ def train_cifar(batch_size=128,n_epochs=200,test_frequency=13,learning_rate_base
                     for i in range(len(all_layers)):
                         best_params.append(all_layers[i].W.get_value().copy())
                         best_params.append(all_layers[i].b.get_value().copy())
-                    outfile_name = 'current_best_params.pkl'
+                    outfile_name = check_point_path+'current_best_params.pkl'
                     outfile = open(outfile_name,'wb')
                     cPickle.dump(best_params,outfile)
                     outfile.close()
@@ -310,9 +310,9 @@ def train_cifar(batch_size=128,n_epochs=200,test_frequency=13,learning_rate_base
                 for i in range(len(all_layers)):
                     current_params.append(all_layers[i].W.get_value().copy())
                     current_params.append(all_layers[i].b.get_value().copy())
-                outfile_name = './check_points/' + 'current_params_' + str(time.localtime().tm_mon) + '_' + str(time.localtime().tm_mday) \
+                outfile_name = check_point_path + 'current_params_' + str(time.localtime().tm_mon) + '_' + str(time.localtime().tm_mday) \
                 + '_' + str(time.localtime().tm_hour) + '_' + str(time.localtime().tm_min) + '_' + str(time.localtime().tm_sec)+'.pkl'
-                outfile = open('outfile_name','wb')
+                outfile = open(outfile_name,'wb')
                 cPickle.dump(current_params,outfile)
                 outfile.close()
                 print 'saved check_point to %s' % outfile_name

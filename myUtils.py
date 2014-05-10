@@ -18,8 +18,9 @@ from theano.gof.op import get_debug_values
 def load_cifar_data(dataset, REMOVE_MEAN=1, UNIT_STD=0, WHICHSET='train'):
     #load the data
     print 'loading data..'
+    data_path = '/home/chensi/mylocal/sichen/data/cifar-10-batches-py/'
     for batch in range(len(dataset)):
-        fo = open(dataset[batch],'rb')
+        fo = open(data_path+dataset[batch],'rb')
         data = cPickle.load(fo)
         if batch == 0:
             feature = data['data']
@@ -34,7 +35,7 @@ def load_cifar_data(dataset, REMOVE_MEAN=1, UNIT_STD=0, WHICHSET='train'):
         print 'training_set..'
         if REMOVE_MEAN == 1:
             mean = numpy.mean(feature,axis=0)
-            mean_file = open('mean_file.pkl','wb')
+            mean_file = open(data_path+'mean_file.pkl','wb')
             cPickle.dump(mean,mean_file,protocol=cPickle.HIGHEST_PROTOCOL)
             mean_file.close()
             feature = feature - mean
@@ -43,7 +44,7 @@ def load_cifar_data(dataset, REMOVE_MEAN=1, UNIT_STD=0, WHICHSET='train'):
         if UNIT_STD == 1:
             std = numpy.std(feature,axis=0)
             feature = feature/std
-            std_file = open('std_file.pkl','wb')
+            std_file = open(data_path+'std_file.pkl','wb')
             cPickle.dump(std,std_file,protocol=cPickle.HIGHEST_PROTOCOL)
             std_file.close()
             print std
@@ -51,14 +52,14 @@ def load_cifar_data(dataset, REMOVE_MEAN=1, UNIT_STD=0, WHICHSET='train'):
     else:
         print 'valid or test_set..'
         if REMOVE_MEAN == 1:
-            mean_file = open('mean_file.pkl','rb')
+            mean_file = open(data_path+'mean_file.pkl','rb')
             mean = cPickle.load(mean_file)
             feature = feature - mean
             mean_file.close()
             print mean
             print 'feature mean = %f' % (numpy.mean(feature))
         if UNIT_STD == 1:
-            std_file = open('std_file.pkl','rb')
+            std_file = open(data_path+'std_file.pkl','rb')
             std = cPickle.load(std_file)
             feature = feature/std
             std_file.close()

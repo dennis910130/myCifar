@@ -144,7 +144,7 @@ class LogisticRegression(object):
 class HiddenLayer(object):
     def __init__(self, rng, input, n_in, n_out, W1=None, b1=None,
                  activation='relu', initW=0.01,initB=0,
-                 epsW=0.001, epsB=0.002, momW=0.9, momB=0.9, wc=0.004):
+                 epsW=0.001, epsB=0.002, momW=0.9, momB=0.9, wc=0.004,name='default'):
         """
         Typical hidden layer of a MLP: units are fully-connected and have
         sigmoidal activation function. Weight matrix W is of shape (n_in,n_out)
@@ -171,6 +171,7 @@ class HiddenLayer(object):
                            layer
         """
         self.input = input
+        self.name = name
 
         # `W` is initialized with `W_values` which is uniformely sampled
         # from sqrt(-6./(n_in+n_hidden)) and sqrt(6./(n_in+n_hidden))

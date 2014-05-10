@@ -12,7 +12,7 @@ from layers import LogisticRegression,HiddenLayer,LeNetConvPoolLayer
 from myUtils import load_cifar_data
 import optparse
 
-def train_cifar(batch_size=128,n_epochs=200,test_frequency=13,learning_rate_base=1, check_point_frequency=5000,show_progress_frequency=100):
+def train_cifar(batch_size=128,n_epochs=200,test_frequency=1300,learning_rate_base=1, check_point_frequency=5000,show_progress_frequency=100):
     check_point_path = '/home/chensi/mylocal/sichen/data/check_points/'
     parser = optparse.OptionParser()
     parser.add_option("-f",dest="filename", default=None)
@@ -62,7 +62,8 @@ def train_cifar(batch_size=128,n_epochs=200,test_frequency=13,learning_rate_base
                                     epsB=0.002,
                                     momW=0.9,
                                     momB=0.9,
-                                    wc=0.004
+                                    wc=0.004,
+                                    name='conv1'
                                     )
 
         conv_pool2 = LeNetConvPoolLayer(rng=rng2,input=conv_pool1.output,
@@ -76,7 +77,8 @@ def train_cifar(batch_size=128,n_epochs=200,test_frequency=13,learning_rate_base
                                         epsB=0.002,
                                         momW=0.9,
                                         momB=0.9,
-                                        wc=0.004)
+                                        wc=0.004,
+                                        name='conv2')
         conv_pool3 = LeNetConvPoolLayer(rng=rng3,input=conv_pool2.output,
                                         filter_shape=(32,5,5,64),
                                         image_shape=(32,8,8,batch_size),
@@ -88,7 +90,8 @@ def train_cifar(batch_size=128,n_epochs=200,test_frequency=13,learning_rate_base
                                         epsB=0.002,
                                         momW=0.9,
                                         momB=0.9,
-                                        wc=0.004)
+                                        wc=0.004,
+                                        name='conv3')
 
         layer4_input = conv_pool3.output.dimshuffle(3,0,1,2).flatten(2)
         #fc_64 = HiddenLayer(rng=rng4,input=layer4_input,n_in=64*4*4,n_out=64,initW=0.1,initB=0)
@@ -97,13 +100,15 @@ def train_cifar(batch_size=128,n_epochs=200,test_frequency=13,learning_rate_base
                             epsB=0.002,
                             momW=0.9,
                             momB=0.9,
-                            wc=0.03)
+                            wc=0.03,
+                            name='fc1')
         fc_2 = LogisticRegression(input=fc_1.output,rng=rng5,n_in=64,n_out=10,initW=0.1,
                                    epsW=0.001,
                                     epsB=0.002,
                                     momW=0.9,
                                     momB=0.9,
-                                    wc=0.03)
+                                    wc=0.03,
+                                    name='fc2')
     else:
         print 'resume training %s...' % options.filename
 
@@ -133,7 +138,7 @@ def train_cifar(batch_size=128,n_epochs=200,test_frequency=13,learning_rate_base
                                     momW=0.9,
                                     momB=0.9,
                                     wc=0.004,
-
+                                    name='conv1',
                                     W1=layer1_W,
                                     b1=layer1_b
                                     )
@@ -149,7 +154,7 @@ def train_cifar(batch_size=128,n_epochs=200,test_frequency=13,learning_rate_base
                                         momW=0.9,
                                         momB=0.9,
                                         wc=0.004,
-
+                                        name='conv2',
                                         W1=layer2_W,
                                         b1=layer2_b
                                         )
@@ -164,8 +169,7 @@ def train_cifar(batch_size=128,n_epochs=200,test_frequency=13,learning_rate_base
                                         momW=0.9,
                                         momB=0.9,
                                         wc=0.004,
-
-
+                                        name='conv3',
                                         W1=layer3_W,
                                         b1=layer3_b
                                         )
@@ -179,7 +183,8 @@ def train_cifar(batch_size=128,n_epochs=200,test_frequency=13,learning_rate_base
                             momB=0.9,
                             wc=0.03,
                             W1=fc64_W,
-                            b1=fc64_b)
+                            b1=fc64_b,
+                            name='fc1')
         fc_2 = LogisticRegression(input=fc_1.output,rng=rng5,n_in=64,n_out=10,initW=0.1,
                                    epsW=0.001,
                                     epsB=0.001,
@@ -187,7 +192,8 @@ def train_cifar(batch_size=128,n_epochs=200,test_frequency=13,learning_rate_base
                                     momB=0.9,
                                     wc=0.03,
                                     W=fc10_W,
-                                    b=fc10_b
+                                    b=fc10_b,
+                                    name='fc2'
                                     )
     all_layers = [conv_pool1,conv_pool2,conv_pool3,fc_1,fc_2]
 #######test model
@@ -253,8 +259,7 @@ def train_cifar(batch_size=128,n_epochs=200,test_frequency=13,learning_rate_base
 
 
     best_validation_loss = numpy.inf
-    best_iter = 0
-    test_score = 0
+    best_epoch = 0
 
     epoch = 0
 
@@ -286,11 +291,12 @@ def train_cifar(batch_size=128,n_epochs=200,test_frequency=13,learning_rate_base
                     weights = numpy.mean(numpy.abs(all_layers[i].W.get_value()[0,:]))
                     bias = numpy.mean(numpy.abs(all_layers[i].b.get_value()))
 
-                    print 'Layer: %s, weights[0]:%f [%f]' % (all_layers[i].name, weights*1.00, weights-pweights[i])
-                    print 'Layer: %s,bias: %f[%f]' % (all_layers[i].name, bias*1.00, bias-pbias[i])
+                    print 'Layer: %s, weights[0]:%e [%e]' % (all_layers[i].name, weights*1.00, weights-pweights[i])
+                    print 'Layer: %s,bias: %e[%e]' % (all_layers[i].name, bias*1.00, bias-pbias[i])
                     pweights[i] = weights
                     pbias[i] = bias
                 if this_test_loss < best_validation_loss:
+                    best_epoch = epoch
                     best_validation_loss = this_test_loss
                     best_params = []
                     for i in range(len(all_layers)):
@@ -320,7 +326,7 @@ def train_cifar(batch_size=128,n_epochs=200,test_frequency=13,learning_rate_base
                 print '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~(%f seconds)' % (time2-time1)
 
     end_time = time.time()
-    print 'Best test score is %f. Total time:%f hour' % (best_validation_loss * 100., (end_time-start_time)/3600.)
+    print 'Best test score is %f at epoch %d. Total time:%f hour' % (best_validation_loss * 100., best_epoch, (end_time-start_time)/3600.)
 
 if __name__ == '__main__':
     train_cifar()

@@ -12,10 +12,10 @@ from layers import LogisticRegression,HiddenLayer,LeNetConvPoolLayer
 from myUtils import load_cifar_data
 import optparse
 
-def train_cifar(batch_size=128,n_epochs=200,test_frequency=1300,learning_rate_base=1, check_point_frequency=5000,show_progress_frequency=100):
+def train_cifar(batch_size=128,n_epochs=20,test_frequency=1300,learning_rate_base=0.01, check_point_frequency=5000,show_progress_frequency=100):
     check_point_path = '/home/chensi/mylocal/sichen/data/check_points/'
     parser = optparse.OptionParser()
-    parser.add_option("-f",dest="filename", default=None)
+    parser.add_option("-f",dest="filename", default='None')
 
     (options, args) = parser.parse_args()
 
@@ -48,7 +48,7 @@ def train_cifar(batch_size=128,n_epochs=200,test_frequency=1300,learning_rate_ba
     #defining the layers#
     #####################
 
-    if options.filename == None:
+    if options.filename == 'None':
         print 'start new training...'
         print 'building model...'
         conv_pool1 = LeNetConvPoolLayer(rng=rng1,input=img_input,
@@ -244,7 +244,7 @@ def train_cifar(batch_size=128,n_epochs=200,test_frequency=1300,learning_rate_ba
     for b_i, gradb_i, momb_i, epsb_i, pgb_i in zip(bs, gradbs, mombs, epsbs, pgradbs):
         grad_i = - epsb_i*gradb_i + momb_i*pgb_i
         updates.append((b_i, b_i+grad_i))
-        updates.append((pgb_i,gradb_i))
+        updates.append((pgb_i,grad_i))
 
     train_model = theano.function(inputs=[index],outputs=[cost,fc_2.errors(y)],updates=updates,
                                   givens={

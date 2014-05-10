@@ -26,7 +26,7 @@
       <file leaf-file-name="layers.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/layers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="170" column="32" selection-start="6982" selection-end="6982" vertical-scroll-proportion="0.0" vertical-offset="1666" max-vertical-offset="7965">
+            <state line="170" column="32" selection-start="6982" selection-end="6982" vertical-scroll-proportion="0.0" vertical-offset="1006" max-vertical-offset="7965">
               <folding />
             </state>
           </provider>
@@ -53,7 +53,7 @@
       <file leaf-file-name="train_cifar.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/train_cifar.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="195" column="46" selection-start="9306" selection-end="9306" vertical-scroll-proportion="4.982964" vertical-offset="0" max-vertical-offset="5340">
+            <state line="32" column="49" selection-start="1106" selection-end="1106" vertical-scroll-proportion="0.8177172" vertical-offset="0" max-vertical-offset="5355">
               <folding>
                 <element signature="e#22#36#0" expanded="true" />
               </folding>
@@ -64,7 +64,7 @@
       <file leaf-file-name="cifar_fast.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cifar_fast.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="21" selection-start="1205" selection-end="1205" vertical-scroll-proportion="0.0" vertical-offset="2010" max-vertical-offset="3930">
+            <state line="123" column="8" selection-start="5701" selection-end="5759" vertical-scroll-proportion="0.0" vertical-offset="1365" max-vertical-offset="3930">
               <folding />
             </state>
           </provider>
@@ -418,9 +418,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cifar_fast.py">
+    <entry file="file://$PROJECT_DIR$/cifar_fast_dropout.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="21" selection-start="1205" selection-end="1205" vertical-scroll-proportion="0.0" vertical-offset="2010" max-vertical-offset="3930">
+        <state line="111" column="41" selection-start="4980" selection-end="4980" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4380">
           <folding />
         </state>
       </provider>
@@ -432,16 +432,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cifar_fast_dropout.py">
+    <entry file="file://$PROJECT_DIR$/cifar_fast.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="111" column="41" selection-start="4980" selection-end="4980" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4380">
+        <state line="123" column="8" selection-start="5701" selection-end="5759" vertical-scroll-proportion="0.0" vertical-offset="1365" max-vertical-offset="3930">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/train_cifar.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="195" column="46" selection-start="9306" selection-end="9306" vertical-scroll-proportion="4.982964" vertical-offset="0" max-vertical-offset="5340">
+        <state line="32" column="49" selection-start="1106" selection-end="1106" vertical-scroll-proportion="0.8177172" vertical-offset="0" max-vertical-offset="5355">
           <folding>
             <element signature="e#22#36#0" expanded="true" />
           </folding>

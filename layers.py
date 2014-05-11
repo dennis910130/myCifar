@@ -20,6 +20,12 @@ def _dropout_from_layer(rng, layer, p):
     return output
 ################################################################
 
+def drop_out_layer(rng, input, p):
+    srng = theano.tensor.shared_randomstreams.RandomStreams(rng.randint(999999))
+    mask = srng.binomial(n=1,p=1-p,size=input.shape)
+    output = input*T.cast(mask, theano.config.floatX)
+    return output
+
 #################Logistic Regression Layer######################
 class LogisticRegression(object):
     """Multi-class Logistic Regression Class

@@ -8,11 +8,11 @@ import time
 import numpy
 import theano
 import theano.tensor as T
-from layers import LogisticRegression,HiddenLayer,LeNetConvPoolLayer
+from layers import LogisticRegression,HiddenLayer,LeNetConvPoolLayer,drop_out_layer
 from myUtils import load_cifar_data
 import optparse
 
-def train_cifar(batch_size=128,n_epochs=20,test_frequency=1300,learning_rate_base=0.01, check_point_frequency=5000,show_progress_frequency=100):
+def train_cifar(batch_size=128,n_epochs=200,test_frequency=1300,learning_rate_base=1, check_point_frequency=5000,show_progress_frequency=100):
     check_point_path = '/home/chensi/mylocal/sichen/data/check_points/'
     parser = optparse.OptionParser()
     parser.add_option("-f",dest="filename", default='None')
@@ -51,7 +51,8 @@ def train_cifar(batch_size=128,n_epochs=20,test_frequency=1300,learning_rate_bas
     if options.filename == 'None':
         print 'start new training...'
         print 'building model...'
-        conv_pool1 = LeNetConvPoolLayer(rng=rng1,input=img_input,
+        conv1_input = drop_out_layer(rng1,img_input,0.5)
+        conv_pool1 = LeNetConvPoolLayer(rng=rng1,input=conv1_input,
                                     filter_shape=(3,5,5,32),
                                     image_shape=(3,32,32,batch_size),
                                     activation='relu',
@@ -126,8 +127,8 @@ def train_cifar(batch_size=128,n_epochs=20,test_frequency=1300,learning_rate_bas
         fc10_W = theano.shared(params[8],borrow=True)
         fc10_b = theano.shared(params[9],borrow=True)
         print 'building model...'
-
-        conv_pool1 = LeNetConvPoolLayer(rng=rng1,input=img_input,
+        conv1_input = drop_out_layer(rng1,img_input,0.5)
+        conv_pool1 = LeNetConvPoolLayer(rng=rng1,input=conv1_input,
                                     filter_shape=(3,5,5,32),
                                     image_shape=(3,32,32,batch_size),
                                     poolsize=(3,3),poolstride=2,pad=2,
@@ -195,19 +196,69 @@ def train_cifar(batch_size=128,n_epochs=20,test_frequency=1300,learning_rate_bas
                                     b=fc10_b,
                                     name='fc2'
                                     )
+
     all_layers = [conv_pool1,conv_pool2,conv_pool3,fc_1,fc_2]
-#######test model
-    cost = fc_2.negative_log_likelihood(y)
+#############################################
+############### test model###################
+#############################################
+    print 'building test model...'
+    conv1_input_test = img_input/2.0
+    conv_pool1_test = LeNetConvPoolLayer(rng=rng1,input=conv1_input_test,
+                                filter_shape=(3,5,5,32),
+                                image_shape=(3,32,32,batch_size),
+                                activation='relu',
+                                poolsize=(3,3),poolstride=2,pad=2,
+                                convstride=1,initW=0.0001,initB=0,partial_sum=4,
+                                pooling='max',
+                                W1=conv_pool1.W,
+                                b1=conv_pool1.b,
+                                name='conv1'
+                                )
+
+    conv_pool2_test = LeNetConvPoolLayer(rng=rng2,input=conv_pool1_test.output,
+                                    filter_shape=(32,5,5,32),
+                                    image_shape=(32,16,16,batch_size),
+                                    activation='relu',
+                                    poolsize=(3,3),poolstride=2,pad=2,
+                                    convstride=1,initW=0.01,initB=0,partial_sum=4,
+                                    pooling='average',
+                                    W1=conv_pool2.W,
+                                    b1=conv_pool2.b,
+                                    name='conv2')
+    conv_pool3_test = LeNetConvPoolLayer(rng=rng3,input=conv_pool2_test.output,
+                                    filter_shape=(32,5,5,64),
+                                    image_shape=(32,8,8,batch_size),
+                                    activation='relu',
+                                    poolsize=(3,3),poolstride=2,pad=2,
+                                    convstride=1,initW=0.01,initB=0,partial_sum=4,
+                                    pooling='average',
+                                    W1=conv_pool3.W,
+                                    b1=conv_pool3.b,
+                                    name='conv3')
+
+    layer4_input_test = conv_pool3_test.output.dimshuffle(3,0,1,2).flatten(2)
+    #fc_64 = HiddenLayer(rng=rng4,input=layer4_input,n_in=64*4*4,n_out=64,initW=0.1,initB=0)
+    fc_1_test = HiddenLayer(rng=rng4,input=layer4_input_test,n_in=64*4*4,n_out=64,initW=0.1,initB=0,
+                        W1=fc_1.W,
+                        b1=fc_1.b,
+                        name='fc1')
+    fc_2_test = LogisticRegression(input=fc_1_test.output,rng=rng5,n_in=64,n_out=10,initW=0.1,
+                                W=fc_2.W,
+                                b=fc_2.b,
+                                name='fc2')
+
+
+    #cost_test = fc_2_test.negative_log_likelihood(y)
 
 
 
-
-    test_model = theano.function(inputs=[index], outputs=fc_2.errors(y),
+    test_model = theano.function(inputs=[index], outputs=fc_2_test.errors(y),
                                  givens={
                                      x:test_set_x[index*batch_size: (index+1)*batch_size],
                                      y:test_set_y[index*batch_size: (index+1)*batch_size]
                                  })
 ########train model
+    cost = fc_2.negative_log_likelihood(y)
     Ws = []
     pgradWs = []
 

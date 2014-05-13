@@ -7,7 +7,7 @@ from utils import tile_raster_images
 import PIL.Image
 
 import numpy as np
-
+import os
 from theano.gof.op import get_debug_values
 
 
@@ -18,7 +18,7 @@ from theano.gof.op import get_debug_values
 def load_cifar_data(dataset, REMOVE_MEAN=1, UNIT_STD=0, WHICHSET='train'):
     #load the data
     print 'loading data..'
-    data_path = '/home/chensi/mylocal/sichen/data/cifar-10-batches-py/'
+    data_path = os.environ['DATA_PATH']
     for batch in range(len(dataset)):
         fo = open(data_path+dataset[batch],'rb')
         data = cPickle.load(fo)

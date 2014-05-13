@@ -14,7 +14,7 @@ from myUtils import load_cifar_data
 import optparse
 
 def train_cifar(learning_rate_base=10,batch_size=128,n_epochs=20,test_frequency=1300, check_point_frequency=5000,show_progress_frequency=100):
-    check_point_path = '/home/chensi/mylocal/sichen/data/check_points/'
+    check_point_path = os.environ['CHECK_POINT_PATH']
     parser = optparse.OptionParser()
     parser.add_option("-f",dest="filename", default='None')
 

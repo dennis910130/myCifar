@@ -13,7 +13,7 @@ from layers import LogisticRegression,HiddenLayer,LeNetConvPoolLayer
 from myUtils import load_cifar_data
 import optparse
 
-def train_cifar(batch_size=128,n_epochs=200,test_frequency=1300,learning_rate_base=100, check_point_frequency=5000,show_progress_frequency=100):
+def train_cifar(learning_rate_base=10,batch_size=128,n_epochs=20,test_frequency=1300, check_point_frequency=5000,show_progress_frequency=100):
     check_point_path = '/home/chensi/mylocal/sichen/data/check_points/'
     parser = optparse.OptionParser()
     parser.add_option("-f",dest="filename", default='None')
@@ -63,7 +63,7 @@ def train_cifar(batch_size=128,n_epochs=200,test_frequency=1300,learning_rate_ba
                                     epsB=0.002,
                                     momW=0.9,
                                     momB=0.9,
-                                    wc=0.004,
+                                    wc=0.00004,
                                     name='conv1'
                                     )
 
@@ -78,7 +78,7 @@ def train_cifar(batch_size=128,n_epochs=200,test_frequency=1300,learning_rate_ba
                                         epsB=0.002,
                                         momW=0.9,
                                         momB=0.9,
-                                        wc=0.004,
+                                        wc=0.00004,
                                         name='conv2')
         conv_pool3 = LeNetConvPoolLayer(rng=rng3,input=conv_pool2.output,
                                         filter_shape=(32,5,5,64),
@@ -91,7 +91,7 @@ def train_cifar(batch_size=128,n_epochs=200,test_frequency=1300,learning_rate_ba
                                         epsB=0.002,
                                         momW=0.9,
                                         momB=0.9,
-                                        wc=0.004,
+                                        wc=0.00004,
                                         name='conv3')
 
         layer4_input = conv_pool3.output.dimshuffle(3,0,1,2).flatten(2)
@@ -101,14 +101,14 @@ def train_cifar(batch_size=128,n_epochs=200,test_frequency=1300,learning_rate_ba
                             epsB=0.002,
                             momW=0.9,
                             momB=0.9,
-                            wc=0.03,
+                            wc=0.003,
                             name='fc1')
         fc_2 = LogisticRegression(input=fc_1.output,rng=rng5,n_in=64,n_out=10,initW=0.1,
                                    epsW=0.001,
                                     epsB=0.002,
                                     momW=0.9,
                                     momB=0.9,
-                                    wc=0.03,
+                                    wc=0.003,
                                     name='fc2')
     else:
         print 'resume training %s...' % options.filename
@@ -138,7 +138,7 @@ def train_cifar(batch_size=128,n_epochs=200,test_frequency=1300,learning_rate_ba
                                     epsB=0.001,
                                     momW=0.9,
                                     momB=0.9,
-                                    wc=0.004,
+                                    wc=0.00004,
                                     name='conv1',
                                     W1=layer1_W,
                                     b1=layer1_b
@@ -154,7 +154,7 @@ def train_cifar(batch_size=128,n_epochs=200,test_frequency=1300,learning_rate_ba
                                         epsB=0.001,
                                         momW=0.9,
                                         momB=0.9,
-                                        wc=0.004,
+                                        wc=0.00004,
                                         name='conv2',
                                         W1=layer2_W,
                                         b1=layer2_b
@@ -169,7 +169,7 @@ def train_cifar(batch_size=128,n_epochs=200,test_frequency=1300,learning_rate_ba
                                         epsB=0.001,
                                         momW=0.9,
                                         momB=0.9,
-                                        wc=0.004,
+                                        wc=0.00004,
                                         name='conv3',
                                         W1=layer3_W,
                                         b1=layer3_b
@@ -182,7 +182,7 @@ def train_cifar(batch_size=128,n_epochs=200,test_frequency=1300,learning_rate_ba
                             epsB=0.001,
                             momW=0.9,
                             momB=0.9,
-                            wc=0.03,
+                            wc=0.003,
                             W1=fc64_W,
                             b1=fc64_b,
                             name='fc1')
@@ -191,7 +191,7 @@ def train_cifar(batch_size=128,n_epochs=200,test_frequency=1300,learning_rate_ba
                                     epsB=0.001,
                                     momW=0.9,
                                     momB=0.9,
-                                    wc=0.03,
+                                    wc=0.003,
                                     W=fc10_W,
                                     b=fc10_b,
                                     name='fc2'

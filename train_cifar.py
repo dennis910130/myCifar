@@ -12,7 +12,7 @@ from layers import LogisticRegression,HiddenLayer,LeNetConvPoolLayer
 from myUtils import load_cifar_data
 import optparse
 
-def train_cifar(batch_size=128,n_epochs=20,test_frequency=1300,learning_rate_base=0.01, check_point_frequency=5000,show_progress_frequency=100):
+def train_cifar(batch_size=128,n_epochs=200,test_frequency=1300,learning_rate_base=1, check_point_frequency=5000,show_progress_frequency=100):
     check_point_path = '/home/chensi/mylocal/sichen/data/check_points/'
     parser = optparse.OptionParser()
     parser.add_option("-f",dest="filename", default='None')
@@ -27,8 +27,8 @@ def train_cifar(batch_size=128,n_epochs=20,test_frequency=1300,learning_rate_bas
     rng5 = numpy.random.RandomState(25365)
 
 
-    train_set_x, train_set_y = load_cifar_data(['data_batch_1','data_batch_2','data_batch_3','data_batch_4','data_batch_5'])
-    test_set_x, test_set_y = load_cifar_data(['test_batch'],WHICHSET='test')
+    train_set_x, train_set_y = load_cifar_data(['data_batch_1','data_batch_2','data_batch_3','data_batch_4','data_batch_5'],UNIT_STD=0)
+    test_set_x, test_set_y = load_cifar_data(['test_batch'],WHICHSET='test',UNIT_STD=0)
 
     n_training_batches = train_set_x.get_value(borrow=True).shape[0]
     n_test_batches = test_set_x.get_value(borrow=True).shape[0]

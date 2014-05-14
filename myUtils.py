@@ -70,6 +70,8 @@ def load_cifar_data(dataset, REMOVE_MEAN=1, UNIT_STD=0, WHICHSET='train'):
 
     return shared_feature, T.cast(shared_label,'int32')
 
+
+
 def load_data(dataset):
     ''' Loads the dataset
 

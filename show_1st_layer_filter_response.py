@@ -59,7 +59,7 @@ def collect_filter_response(batch_size=128):
     conv_out_shuffled = conv_op(contiguous_input,contiguous_filters)
     linear_output = conv_out_shuffled + layer1_b.dimshuffle(0,'x','x','x')
     final_output = linear_output.dimshuffle(3,0,1,2)
-    final_output = final_output.reshape((batch_size,32,-1))
+    final_output = final_output.reshape((batch_size,32,1024))
 
     get_linear_output = theano.function(inputs=[index],outputs=final_output,
                             givens={x: train_set_x[index * batch_size: (index + 1) * batch_size]})

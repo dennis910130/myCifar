@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f835edd-cd76-4137-a805-9cafd9dcc5db" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train_cifar.py" afterPath="$PROJECT_DIR$/train_cifar.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="myCifar.iws" />
@@ -26,6 +25,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="layers.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/layers.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="38" column="25" selection-start="1445" selection-end="1445" vertical-scroll-proportion="0.0" vertical-offset="4290" max-vertical-offset="8055">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="train_cifar_unit.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/train_cifar_unit.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -46,11 +54,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="train_cifar.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="train_cifar.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/train_cifar.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="0" selection-start="833" selection-end="833" vertical-scroll-proportion="0.41237113" vertical-offset="0" max-vertical-offset="5190">
+            <state line="27" column="0" selection-start="0" selection-end="15302" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5190">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="train_cifar_vshape.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/train_cifar_vshape.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="42" selection-start="707" selection-end="707" vertical-scroll-proportion="0.5927835" vertical-offset="0" max-vertical-offset="5400">
+              <folding>
+                <element signature="e#22#36#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -86,6 +105,7 @@
         <option value="$PROJECT_DIR$/train_cifar_unit.py" />
         <option value="$PROJECT_DIR$/myUtils.py" />
         <option value="$PROJECT_DIR$/train_cifar.py" />
+        <option value="$PROJECT_DIR$/train_cifar_vshape.py" />
       </list>
     </option>
   </component>
@@ -341,13 +361,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/layers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="224" column="0" selection-start="9216" selection-end="9216" vertical-scroll-proportion="0.0" vertical-offset="3360" max-vertical-offset="4515">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/myUtils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="16" selection-start="389" selection-end="389" vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="4365" />
@@ -400,13 +413,6 @@
         <state line="22" column="42" selection-start="694" selection-end="694" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="6120" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/layers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="25" selection-start="1445" selection-end="1445" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="8055">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fine_tune_salency.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="127" column="33" selection-start="5661" selection-end="5661" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5370">
@@ -430,10 +436,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/layers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="25" selection-start="1445" selection-end="1445" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="8055">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/train_cifar.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="0" selection-start="833" selection-end="833" vertical-scroll-proportion="0.41237113" vertical-offset="0" max-vertical-offset="5190">
+        <state line="27" column="0" selection-start="0" selection-end="15302" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5190">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train_cifar_vshape.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="42" selection-start="707" selection-end="707" vertical-scroll-proportion="0.5927835" vertical-offset="0" max-vertical-offset="5400">
+          <folding>
+            <element signature="e#22#36#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

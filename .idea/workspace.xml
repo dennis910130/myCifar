@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f835edd-cd76-4137-a805-9cafd9dcc5db" name="Default" comment="" />
+    <list default="true" id="9f835edd-cd76-4137-a805-9cafd9dcc5db" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/params_estimation.py" afterPath="$PROJECT_DIR$/params_estimation.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="myCifar.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -57,7 +60,7 @@
       <file leaf-file-name="params_estimation.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/params_estimation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="0" selection-start="895" selection-end="895" vertical-scroll-proportion="0.64356434" vertical-offset="0" max-vertical-offset="606">
+            <state line="26" column="32" selection-start="1044" selection-end="1044" vertical-scroll-proportion="0.6689537" vertical-offset="0" max-vertical-offset="600">
               <folding>
                 <element signature="e#22#34#0" expanded="true" />
               </folding>
@@ -348,7 +351,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.03984375" sideWeight="0.67038214" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1078125" sideWeight="0.67038214" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -497,7 +500,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/params_estimation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="0" selection-start="895" selection-end="895" vertical-scroll-proportion="0.64356434" vertical-offset="0" max-vertical-offset="606">
+        <state line="26" column="32" selection-start="1044" selection-end="1044" vertical-scroll-proportion="0.6689537" vertical-offset="0" max-vertical-offset="600">
           <folding>
             <element signature="e#22#34#0" expanded="true" />
           </folding>

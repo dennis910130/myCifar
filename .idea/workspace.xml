@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9f835edd-cd76-4137-a805-9cafd9dcc5db" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/params_estimation.py" afterPath="$PROJECT_DIR$/params_estimation.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="myCifar.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,7 +48,7 @@
       <file leaf-file-name="myUtils.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myUtils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="0" selection-start="770" selection-end="770" vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="5250">
+            <state line="340" column="0" selection-start="12202" selection-end="12202" vertical-scroll-proportion="0.0" vertical-offset="4704" max-vertical-offset="5250">
               <folding>
                 <element signature="e#22#35#0" expanded="true" />
               </folding>
@@ -57,12 +56,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="params_estimation.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="params_estimation.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/params_estimation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="32" selection-start="1044" selection-end="1044" vertical-scroll-proportion="0.6689537" vertical-offset="0" max-vertical-offset="600">
+            <state line="21" column="80" selection-start="901" selection-end="901" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600">
               <folding>
-                <element signature="e#22#34#0" expanded="true" />
+                <marker date="1400100895000" expanded="true" signature="22:61" placeholder="import ..." />
+                <marker date="1400100895000" expanded="true" signature="112:1176" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -99,10 +99,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="print_output.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/print_output.py">
+      <file leaf-file-name="show_cifar_img.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/show_cifar_img.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="35" selection-start="239" selection-end="239" vertical-scroll-proportion="0.0" vertical-offset="110" max-vertical-offset="705">
+            <state line="32" column="20" selection-start="1016" selection-end="1016" vertical-scroll-proportion="0.82474226" vertical-offset="0" max-vertical-offset="582">
+              <folding>
+                <element signature="e#22#36#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show_filters.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/show_filters.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="9" selection-start="142" selection-end="142" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
               <folding />
             </state>
           </provider>
@@ -141,14 +152,15 @@
         <option value="$PROJECT_DIR$/train_cifar_vshape.py" />
         <option value="$PROJECT_DIR$/myUtils.py" />
         <option value="$PROJECT_DIR$/params_estimation.py" />
+        <option value="$PROJECT_DIR$/show_cifar_img.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1" />
-    <option name="y" value="22" />
-    <option name="width" value="1280" />
-    <option name="height" value="729" />
+    <option name="x" value="4" />
+    <option name="y" value="26" />
+    <option name="width" value="910" />
+    <option name="height" value="728" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -209,6 +221,11 @@
     <option name="myPythonConsoleState">
       <PyConsoleSettings />
     </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="tests" factoryName="py.test">
@@ -344,14 +361,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="22" width="1280" height="729" extended-state="6" />
+    <frame x="4" y="26" width="910" height="728" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1078125" sideWeight="0.67038214" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15164836" sideWeight="0.67038214" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -397,21 +414,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/show_network.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="136" column="9" selection-start="6131" selection-end="6131" vertical-scroll-proportion="0.0" vertical-offset="1380" max-vertical-offset="2505" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fast_saliency_network.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="33" selection-start="4047" selection-end="4047" vertical-scroll-proportion="0.41489363" vertical-offset="1161" max-vertical-offset="5505" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cifar_large.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="0" selection-start="1203" selection-end="1203" vertical-scroll-proportion="0.875" vertical-offset="0" max-vertical-offset="4380" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cifar_full.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="32" selection-start="274" selection-end="274" vertical-scroll-proportion="-5.1" vertical-offset="3255" max-vertical-offset="4080" />
@@ -480,6 +482,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/params_estimation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="80" selection-start="901" selection-end="901" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600">
+          <folding>
+            <marker date="1400100895000" expanded="true" signature="22:61" placeholder="import ..." />
+            <marker date="1400100895000" expanded="true" signature="112:1176" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/collect_filter_response.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="60" column="0" selection-start="1789" selection-end="1789" vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="1410">
@@ -489,20 +501,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/show_filters.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="9" selection-start="142" selection-end="142" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/myUtils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="0" selection-start="770" selection-end="770" vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="5250">
+        <state line="340" column="0" selection-start="12202" selection-end="12202" vertical-scroll-proportion="0.0" vertical-offset="4704" max-vertical-offset="5250">
           <folding>
             <element signature="e#22#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/params_estimation.py">
+    <entry file="file://$PROJECT_DIR$/class_0.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/show_cifar_img.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="32" selection-start="1044" selection-end="1044" vertical-scroll-proportion="0.6689537" vertical-offset="0" max-vertical-offset="600">
+        <state line="32" column="20" selection-start="1016" selection-end="1016" vertical-scroll-proportion="0.82474226" vertical-offset="0" max-vertical-offset="582">
           <folding>
-            <element signature="e#22#34#0" expanded="true" />
+            <element signature="e#22#36#0" expanded="true" />
           </folding>
         </state>
       </provider>

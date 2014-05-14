@@ -7,7 +7,7 @@ def params_estimation(mu=0.001,eita=1.0,beta=1.0):
     time1 = time.time()
     alphas = numpy.zeros((10,32))
     for class_i in range(10):
-    print 'class:' + str(class_i) + '...'
+        print 'class:' + str(class_i) + '...'
         pkl_file_name = data_path + 'class_' + str(class_i) + '.pkl'
         file = open(pkl_file_name,'rb')
         temp = cPickle.load(file)

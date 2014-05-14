@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f835edd-cd76-4137-a805-9cafd9dcc5db" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/params_estimation.py" afterPath="$PROJECT_DIR$/params_estimation.py" />
-    </list>
+    <list default="true" id="9f835edd-cd76-4137-a805-9cafd9dcc5db" name="Default" comment="" />
     <ignored path="myCifar.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -91,7 +89,16 @@
       <file leaf-file-name="collect_filter_response.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/collect_filter_response.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="0" selection-start="1789" selection-end="1789" vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="1410">
+            <state line="16" column="12" selection-start="269" selection-end="269" vertical-scroll-proportion="0.0" vertical-offset="624" max-vertical-offset="1410">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show_1st_layer_filter_response.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/show_1st_layer_filter_response.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="83" column="29" selection-start="2763" selection-end="2763" vertical-scroll-proportion="0.43649372" vertical-offset="1001" max-vertical-offset="1560">
               <folding>
                 <element signature="e#23#34#0" expanded="true" />
               </folding>
@@ -99,10 +106,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show_cifar_img.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="show_cifar_img.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/show_cifar_img.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="20" selection-start="1016" selection-end="1016" vertical-scroll-proportion="0.82474226" vertical-offset="0" max-vertical-offset="582">
+            <state line="29" column="24" selection-start="348" selection-end="967" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
               <folding>
                 <element signature="e#22#36#0" expanded="true" />
               </folding>
@@ -137,7 +144,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/cifar_full.py" />
         <option value="$PROJECT_DIR$/cifar_large.py" />
         <option value="$PROJECT_DIR$/cifar_fast.py" />
         <option value="$PROJECT_DIR$/cifar_fast_dropout.py" />
@@ -153,6 +159,7 @@
         <option value="$PROJECT_DIR$/myUtils.py" />
         <option value="$PROJECT_DIR$/params_estimation.py" />
         <option value="$PROJECT_DIR$/show_cifar_img.py" />
+        <option value="$PROJECT_DIR$/show_1st_layer_filter_response.py" />
       </list>
     </option>
   </component>
@@ -414,11 +421,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/cifar_full.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="32" selection-start="274" selection-end="274" vertical-scroll-proportion="-5.1" vertical-offset="3255" max-vertical-offset="4080" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cifar_fast.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="123" column="8" selection-start="0" selection-end="11944" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3930" />
@@ -450,22 +452,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/train_cifar_vshape.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="50" selection-start="889" selection-end="889" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5400">
-          <folding>
-            <element signature="e#22#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/train_cifar.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="23" selection-start="1292" selection-end="1292" vertical-scroll-proportion="0.0" vertical-offset="4218" max-vertical-offset="5190">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/train_cifar_unit.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="0" selection-start="259" selection-end="455" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5370">
@@ -492,15 +478,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/collect_filter_response.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="0" selection-start="1789" selection-end="1789" vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="1410">
-          <folding>
-            <element signature="e#23#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/show_filters.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="9" selection-start="142" selection-end="142" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
@@ -522,11 +499,43 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/show_cifar_img.py">
+    <entry file="file://$PROJECT_DIR$/train_cifar.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="20" selection-start="1016" selection-end="1016" vertical-scroll-proportion="0.82474226" vertical-offset="0" max-vertical-offset="582">
+        <state line="38" column="23" selection-start="1292" selection-end="1292" vertical-scroll-proportion="0.0" vertical-offset="4218" max-vertical-offset="5190">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train_cifar_vshape.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="50" selection-start="889" selection-end="889" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5400">
           <folding>
             <element signature="e#22#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/collect_filter_response.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="12" selection-start="269" selection-end="269" vertical-scroll-proportion="0.0" vertical-offset="624" max-vertical-offset="1410">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/show_cifar_img.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="24" selection-start="348" selection-end="967" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
+          <folding>
+            <element signature="e#22#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/show_1st_layer_filter_response.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="83" column="29" selection-start="2763" selection-end="2763" vertical-scroll-proportion="0.43649372" vertical-offset="1001" max-vertical-offset="1560">
+          <folding>
+            <element signature="e#23#34#0" expanded="true" />
           </folding>
         </state>
       </provider>

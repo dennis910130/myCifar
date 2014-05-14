@@ -71,6 +71,62 @@ def load_cifar_data(dataset, REMOVE_MEAN=1, UNIT_STD=0, WHICHSET='train'):
     return shared_feature, T.cast(shared_label,'int32')
 
 
+def load_cifar_data2(dataset, REMOVE_MEAN=1, UNIT_STD=0, WHICHSET='train'):
+    #load the data
+    print 'loading data..'
+    data_path = os.environ['DATA_PATH']
+    for batch in range(len(dataset)):
+        fo = open(data_path+dataset[batch],'rb')
+        data = cPickle.load(fo)
+        if batch == 0:
+            feature = data['data']
+            label = data['labels']
+        else:
+            feature = numpy.concatenate((feature,data['data']),axis=0)
+            label = numpy.concatenate((label,data['labels']),axis=0)
+        fo.close()
+
+
+    if WHICHSET == 'train':
+        print 'training_set..'
+        if REMOVE_MEAN == 1:
+            mean = numpy.mean(feature,axis=0)
+            mean_file = open(data_path+'mean_file.pkl','wb')
+            cPickle.dump(mean,mean_file,protocol=cPickle.HIGHEST_PROTOCOL)
+            mean_file.close()
+            feature = feature - mean
+            print mean
+            print 'feature mean = %f' % (numpy.mean(feature))
+        if UNIT_STD == 1:
+            std = numpy.std(feature,axis=0)
+            feature = feature/std
+            std_file = open(data_path+'std_file.pkl','wb')
+            cPickle.dump(std,std_file,protocol=cPickle.HIGHEST_PROTOCOL)
+            std_file.close()
+            print std
+            print 'feature std = %f' % (numpy.std(feature))
+    else:
+        print 'valid or test_set..'
+        if REMOVE_MEAN == 1:
+            mean_file = open(data_path+'mean_file.pkl','rb')
+            mean = cPickle.load(mean_file)
+            feature = feature - mean
+            mean_file.close()
+            print mean
+            print 'feature mean = %f' % (numpy.mean(feature))
+        if UNIT_STD == 1:
+            std_file = open(data_path+'std_file.pkl','rb')
+            std = cPickle.load(std_file)
+            feature = feature/std
+            std_file.close()
+            print std
+            print 'feature std = %f' % (numpy.std(feature))
+    shared_feature = theano.shared(numpy.asarray(feature,dtype=theano.config.floatX),borrow=True)
+    shared_label = theano.shared(numpy.asarray(label,dtype=theano.config.floatX),borrow=True)
+
+    return shared_feature, shared_label
+
+
 
 def load_data(dataset):
     ''' Loads the dataset

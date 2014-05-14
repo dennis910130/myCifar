@@ -24,6 +24,7 @@ from myUtils import mean_pool_c01b
 import theano.printing
 import theano.tensor.shared_randomstreams
 
+class_response_path = '/home/chensi/mylocal/sichen/data/class_response/'
 
 def collect_filter_response(batch_size=128):
 
@@ -73,7 +74,7 @@ def collect_filter_response(batch_size=128):
     for class_i in range(10):
         temp = train_set_y.get_value()[0:49920]==class_i
         classi = whole_feature_output[temp,:,:]
-        name = 'class_'+str(class_i)+'.pkl'
+        name = class_response_path + 'class_'+str(class_i)+'.pkl'
         f_out = open(name,'wb')
         cPickle.dump(classi,f_out,protocol=cPickle.HIGHEST_PROTOCOL)
         f_out.close()

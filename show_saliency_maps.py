@@ -26,7 +26,7 @@ import theano.printing
 import theano.tensor.shared_randomstreams
 
 class_response_path = '/home/chensi/mylocal/sichen/data/class_response/filter_response_imgs/'
-alphas_path = ''
+alphas_path = '/home/chensi/mylocal/sichen/data/class_response/alphas.pkl'
 
 def collect_filter_response(batch_size=128):
     alpha_file = open(alphas_path,'rb')

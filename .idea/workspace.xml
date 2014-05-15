@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9f835edd-cd76-4137-a805-9cafd9dcc5db" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/show_1st_layer_filter_response.py" afterPath="$PROJECT_DIR$/show_1st_layer_filter_response.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="myCifar.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,17 +31,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state line="319" column="0" selection-start="13245" selection-end="13245" vertical-scroll-proportion="0.0" vertical-offset="6645" max-vertical-offset="8055">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="train_cifar_unit.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/train_cifar_unit.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="0" selection-start="259" selection-end="455" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5370">
-              <folding>
-                <element signature="e#23#37#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -97,13 +87,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show_1st_layer_filter_response.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="show_1st_layer_filter_response.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/show_1st_layer_filter_response.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="61" column="59" selection-start="1851" selection-end="1851" vertical-scroll-proportion="0.35599285" vertical-offset="716" max-vertical-offset="1560">
+            <state line="96" column="0" selection-start="3232" selection-end="3232" vertical-scroll-proportion="0.0" vertical-offset="1001" max-vertical-offset="1590">
               <folding>
                 <element signature="e#23#34#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show_saliency_maps.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/show_saliency_maps.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="22" selection-start="597" selection-end="597" vertical-scroll-proportion="-1.4686941" vertical-offset="1181" max-vertical-offset="1740">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -113,7 +112,8 @@
           <provider selected="true" editor-type-id="text-editor">
             <state line="29" column="24" selection-start="348" selection-end="967" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
               <folding>
-                <element signature="e#22#36#0" expanded="true" />
+                <marker date="1400106651000" expanded="true" signature="22:103" placeholder="import ..." />
+                <marker date="1400106651000" expanded="true" signature="141:967" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -146,7 +146,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/cifar_large.py" />
         <option value="$PROJECT_DIR$/cifar_fast.py" />
         <option value="$PROJECT_DIR$/cifar_fast_dropout.py" />
         <option value="$PROJECT_DIR$/fine_tune_salency.py" />
@@ -161,6 +160,7 @@
         <option value="$PROJECT_DIR$/myUtils.py" />
         <option value="$PROJECT_DIR$/params_estimation.py" />
         <option value="$PROJECT_DIR$/show_cifar_img.py" />
+        <option value="$PROJECT_DIR$/show_saliency_maps.py" />
         <option value="$PROJECT_DIR$/show_1st_layer_filter_response.py" />
       </list>
     </option>
@@ -423,11 +423,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/cifar_fast.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="123" column="8" selection-start="0" selection-end="11944" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3930" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cifar_fast_dropout.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="92" column="43" selection-start="4174" selection-end="4174" vertical-scroll-proportion="0.0" vertical-offset="675" max-vertical-offset="4215">
@@ -458,7 +453,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="0" selection-start="259" selection-end="455" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5370">
           <folding>
-            <element signature="e#23#37#0" expanded="true" />
+            <element signature="e#23#37#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -496,11 +491,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/class_0.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/train_cifar.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="38" column="23" selection-start="1292" selection-end="1292" vertical-scroll-proportion="0.0" vertical-offset="4218" max-vertical-offset="5190">
@@ -528,17 +518,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="29" column="24" selection-start="348" selection-end="967" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
           <folding>
-            <element signature="e#22#36#0" expanded="true" />
+            <marker date="1400106651000" expanded="true" signature="22:103" placeholder="import ..." />
+            <marker date="1400106651000" expanded="true" signature="141:967" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/class_0.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/show_1st_layer_filter_response.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="59" selection-start="1851" selection-end="1851" vertical-scroll-proportion="0.35599285" vertical-offset="716" max-vertical-offset="1560">
+        <state line="96" column="0" selection-start="3232" selection-end="3232" vertical-scroll-proportion="0.0" vertical-offset="1001" max-vertical-offset="1590">
           <folding>
             <element signature="e#23#34#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/show_saliency_maps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="22" selection-start="597" selection-end="597" vertical-scroll-proportion="-1.4686941" vertical-offset="1181" max-vertical-offset="1740">
+          <folding />
         </state>
       </provider>
     </entry>

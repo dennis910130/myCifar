@@ -26,8 +26,12 @@ import theano.printing
 import theano.tensor.shared_randomstreams
 
 class_response_path = '/home/chensi/mylocal/sichen/data/class_response/filter_response_imgs/'
+alphas_path = ''
 
 def collect_filter_response(batch_size=128):
+    alpha_file = open(alphas_path,'rb')
+    alphas = cPickle.load(alpha_file)
+    alpha_file.close()
 
     params_file = open('current_best_params.pkl','rb')
     params = cPickle.load(params_file)
@@ -79,11 +83,17 @@ def collect_filter_response(batch_size=128):
         temp_data = whole_feature_output[temp,:,:]
         temp_data = temp_data[0:100,:,:]
         temp_data = temp_data + 0.0
-	
         #print temp_data.dtype
         for i in range(32):
             x0 = temp_data[:,i,:]
+            alpha_1 = alphas[class_i,i]
+            not_i = numpy.array(range(10))
+            ind = not_i != class_i
+            alpha_0 = numpy.mean(alphas[ind,i])
             x0 = numpy.abs(x0)
+            x0 = (1.0/alpha_0-1.0/alpha_1)*x0 + numpy.log(alpha_0/alpha_1)
+            x0 = x0*(x0>0)
+
             image = PIL.Image.fromarray(tile_raster_images(X=x0,
                                                            img_shape=(32,32),
                                                            tile_shape=(10,10),

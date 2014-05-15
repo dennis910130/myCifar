@@ -79,9 +79,14 @@ def collect_filter_response(batch_size=128):
         temp_data = whole_feature_output[temp,:,:]
         temp_data = temp_data[0:100,:,:]
         temp_data = temp_data + 0.0
+	
         #print temp_data.dtype
         for i in range(32):
             x0 = temp_data[:,i,:]
+	    #mean = numpy.mean(x0,axis=1)
+	    #mean = mean.reshape((-1,1))
+	    #x0 = x0 - mean
+	    x0 = numpy.abs(x0)
             image = PIL.Image.fromarray(tile_raster_images(X=x0,
                                                            img_shape=(32,32),
                                                            tile_shape=(10,10),

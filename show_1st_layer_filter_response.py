@@ -59,7 +59,7 @@ def collect_filter_response(batch_size=128):
     conv_out_shuffled = conv_op(contiguous_input,contiguous_filters)
     linear_output = conv_out_shuffled + layer1_b.dimshuffle(0,'x','x','x')
     final_output = linear_output.dimshuffle(3,0,1,2)
-    final_output = final_output.reshape((batch_size,32,-1))
+    final_output = final_output.reshape((batch_size,32,1024))
 
     get_linear_output = theano.function(inputs=[index],outputs=final_output,
                             givens={x: train_set_x[index * batch_size: (index + 1) * batch_size]})
@@ -79,9 +79,14 @@ def collect_filter_response(batch_size=128):
         temp_data = whole_feature_output[temp,:,:]
         temp_data = temp_data[0:100,:,:]
         temp_data = temp_data + 0.0
+	
         #print temp_data.dtype
         for i in range(32):
             x0 = temp_data[:,i,:]
+	    #mean = numpy.mean(x0,axis=1)
+	    #mean = mean.reshape((-1,1))
+	    #x0 = x0 - mean
+	    x0 = numpy.abs(x0)
             image = PIL.Image.fromarray(tile_raster_images(X=x0,
                                                            img_shape=(32,32),
                                                            tile_shape=(10,10),

@@ -26,13 +26,13 @@ import theano.printing
 import theano.tensor.shared_randomstreams
 
 class_response_path = '/home/chensi/mylocal/sichen/data/class_response/filter_response_imgs/'
-alphas_path = ''
+alphas_path = '/home/chensi/mylocal/sichen/data/class_response/alphas.pkl'
 
 def collect_filter_response(batch_size=128):
     alpha_file = open(alphas_path,'rb')
     alphas = cPickle.load(alpha_file)
     alpha_file.close()
-
+    out_path = '/home/chensi/mylocal/sichen/data/cifar-10-batches-py/'
     params_file = open('current_best_params.pkl','rb')
     params = cPickle.load(params_file)
     params_file.close()
@@ -99,8 +99,9 @@ def collect_filter_response(batch_size=128):
                 x0[j,:] = x0[j,:]*(x0[j,:]>0)
 
         whole_feature_output[:,i,:] = x0
-    whole_feature_output = whole_feature_output.reshape((whole_feature_output.shape[0],whole_feature_output[1],32,32))
-    f = file('saliency_map_for_training.pkl','wb')
+    print whole_feature_output.shape
+    whole_feature_output = whole_feature_output.reshape((whole_feature_output.shape[0],whole_feature_output.shape[1],32,32))
+    f = file(out_path+'saliency_map_for_training.pkl','wb')
     cPickle.dump(whole_feature_output,f)
     f.close()
         #not_i = numpy.array(range(10))

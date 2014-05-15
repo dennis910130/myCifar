@@ -91,8 +91,16 @@ def collect_filter_response(batch_size=128):
             ind = not_i != class_i
             alpha_0 = numpy.mean(alphas[ind,i])
             x0 = numpy.abs(x0)
-            x0 = (1.0/alpha_0-1.0/alpha_1)*x0 + numpy.log(alpha_0/alpha_1)
-            x0 = x0*(x0>0)
+            thres = numpy.log(alpha_0/alpha_1)/(1./alpha_1-1./alpha_0)
+            if alpha_0<alpha_1:
+                x0 = x0-thres
+                x0 = x0*(x0>0)
+            else:
+                x0 = thres - x0
+                x0 = x0*(x0>0)
+
+
+
 
             image = PIL.Image.fromarray(tile_raster_images(X=x0,
                                                            img_shape=(32,32),

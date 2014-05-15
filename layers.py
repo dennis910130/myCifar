@@ -380,10 +380,14 @@ class LeNetConvPoolLayer(object):
         if activation=='vshape':
             vshape = lambda x:T.abs_(x)
             conv_out_shuffled = vshape(conv_out_shuffled + self.b.dimshuffle(0,'x', 'x', 'x'))
+        if activation == 'mrelu':
+            mrelu = lambda x: -x*(x<0)
+            conv_out_shuffled = mrelu(conv_out_shuffled + self.b.dimshuffle(0,'x', 'x', 'x'))
         if pooling == 'max':
             pool_op = MaxPool(ds=poolsize[0],stride=poolstride)
             #pooled_out_shuffled = pool_op(conv_out_shuffled)
             self.output = pool_op(conv_out_shuffled)
+
         else:
 
             side_length = image_shape[1]+2*pad+1-filter_shape[1]

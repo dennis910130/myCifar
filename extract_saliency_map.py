@@ -40,7 +40,8 @@ def collect_filter_response(batch_size=128):
     layer1_b = theano.shared(params[1],borrow=True)
 
 
-    train_set_x, train_set_y = load_cifar_data2(['data_batch_1'])
+    train_set_x, train_set_y = load_cifar_data2(['data_batch_1','data_batch_2','data_batch_3',
+                                                 'data_batch_4','data_batch_5'])
     print train_set_y.get_value().shape
 
 
@@ -52,7 +53,7 @@ def collect_filter_response(batch_size=128):
     index = T.lscalar()
 
     x = T.matrix('x')
-    y = T.ivector('y')
+    #y = T.ivector('y')
 
     img_input = x.reshape((batch_size,3,32,32))
     img_input = img_input.dimshuffle(1,2,3,0)
@@ -77,43 +78,40 @@ def collect_filter_response(batch_size=128):
     print whole_feature_output.shape
     #class_1 = [whole_feature_output[i,0,:] for i in range(total) if train_set_y[i]==0]
     #class_1 = numpy.array(class_1)
-    for class_i in range(10):
-        temp = train_set_y.get_value()[0:9984]==class_i
 
-        temp_data = whole_feature_output[temp,:,:]
-        temp_data = temp_data[0:100,:,:]
-        temp_data = temp_data + 0.0
-        #print temp_data.dtype
-        for i in range(32):
-            x0 = temp_data[:,i,:]
-            #alpha_1 = alphas[class_i,i]
-            alpha_0 = numpy.mean(alphas[:,i])
-            x0 = numpy.abs(x0)
-            for j in range(100):
-                alpha_1 = numpy.mean(x0[j,:])
-                thres = numpy.log(alpha_0/alpha_1)/(1./alpha_1-1./alpha_0)
-                if alpha_0<alpha_1:
-                    x0[j,:] = x0[j,:]-thres
-                    x0[j,:] = x0[j,:]*(x0[j,:]>0)
-                else:
-                    x0[j,:] = thres - x0[j,:]
-                    x0[j,:] = x0[j,:]*(x0[j,:]>0)
+    #temp = train_set_y.get_value()[0:49920]
 
 
-            #not_i = numpy.array(range(10))
-            #ind = not_i != class_i
+    #print temp_data.dtype
+    for i in range(32):
+        x0 = whole_feature_output[:,i,:]
+        #alpha_1 = alphas[class_i,i]
+        alpha_0 = numpy.mean(alphas[:,i])
+        x0 = numpy.abs(x0)
+        for j in range(x0.shape[0]):
+            alpha_1 = numpy.mean(x0[j,:])
+            thres = numpy.log(alpha_0/alpha_1)/(1./alpha_1-1./alpha_0)
+            if alpha_0<alpha_1:
+                x0[j,:] = x0[j,:]-thres
+                x0[j,:] = x0[j,:]*(x0[j,:]>0)
+            else:
+                x0[j,:] = thres - x0[j,:]
+                x0[j,:] = x0[j,:]*(x0[j,:]>0)
+
+        whole_feature_output[:,i,:] = x0
+    whole_feature_output = whole_feature_output.reshape((whole_feature_output.shape[0],whole_feature_output[1],32,32))
+    f = file('saliency_map_for_training.pkl','wb')
+    cPickle.dump(whole_feature_output,f)
+    f.close()
+        #not_i = numpy.array(range(10))
+        #ind = not_i != class_i
 
 
 
 
 
 
-            image = PIL.Image.fromarray(tile_raster_images(X=x0,
-                                                           img_shape=(32,32),
-                                                           tile_shape=(10,10),
-                                                           tile_spacing=(1,1)))
-            name = 'class_' + str(class_i) + '_filter_' + str(i) + '.png'
-            image.save(class_response_path+name)
+
 
 
 

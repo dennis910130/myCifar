@@ -26,7 +26,7 @@ import theano.printing
 import theano.tensor.shared_randomstreams
 
 class_response_path = '/home/chensi/mylocal/sichen/data/class_response/filter_response_imgs/'
-alphas_path = ''
+alphas_path = '/home/chensi/mylocal/sichen/data/class_response/alphas.pkl'
 
 def collect_filter_response(batch_size=128):
     alpha_file = open(alphas_path,'rb')
@@ -89,7 +89,7 @@ def collect_filter_response(batch_size=128):
             #alpha_1 = alphas[class_i,i]
             alpha_0 = numpy.mean(alphas[:,i])
             x0 = numpy.abs(x0)
-            for j in range(128):
+            for j in range(100):
                 alpha_1 = numpy.mean(x0[j,:])
                 thres = numpy.log(alpha_0/alpha_1)/(1./alpha_1-1./alpha_0)
                 if alpha_0<alpha_1:

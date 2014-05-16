@@ -104,7 +104,8 @@ def collect_filter_response(batch_size=128):
     whole_feature_output = numpy.floor(whole_feature_output).astype(int)
     print whole_feature_output.dtype
     print whole_feature_output.shape
-    whole_feature_output = whole_feature_output.reshape((whole_feature_output.shape[0],whole_feature_output.shape[1],32,32))
+    whole_feature_output = whole_feature_output.reshape((whole_feature_output.shape[0],-1))
+    print whole_feature_output.shape
     f = file(out_path+'saliency_map_for_training.pkl','wb')
     cPickle.dump(whole_feature_output,f)
     f.close()

@@ -132,7 +132,7 @@ def train_cifar(learning_rate_base=0.01,batch_size=128,n_epochs=100,test_frequen
                                     poolsize=(3,3),poolstride=2,pad=2,
                                     convstride=1,partial_sum=4,
                                     pooling='max',
-
+                                    alphas=alphas,
                                     name='fix1',
                                     W1=layer1_W,
                                     b1=layer1_b

@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f835edd-cd76-4137-a805-9cafd9dcc5db" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extract_saliency_map.py" afterPath="$PROJECT_DIR$/extract_saliency_map.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="9f835edd-cd76-4137-a805-9cafd9dcc5db" name="Default" comment="" />
     <ignored path="myCifar.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,19 +26,8 @@
       <file leaf-file-name="layers.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/layers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="385" column="28" selection-start="16208" selection-end="16208" vertical-scroll-proportion="0.0" vertical-offset="4359" max-vertical-offset="8115">
+            <state line="385" column="28" selection-start="16208" selection-end="16208" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="8115">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="train_cifar_mrelu.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/train_cifar_mrelu.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="0" selection-start="1063" selection-end="1063" vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="5400">
-              <folding>
-                <element signature="e#22#36#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -49,8 +35,28 @@
       <file leaf-file-name="train_cifar.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/train_cifar.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="23" selection-start="0" selection-end="15302" vertical-scroll-proportion="0.0" vertical-offset="4218" max-vertical-offset="5190">
+            <state line="17" column="45" selection-start="540" selection-end="540" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5190">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="train_cifar_with_imgdrop.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/train_cifar_with_imgdrop.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="18167" vertical-scroll-proportion="0.0" vertical-offset="3825" max-vertical-offset="5955">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="train_with_dropout.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/train_with_dropout.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="42" selection-start="694" selection-end="694" vertical-scroll-proportion="0.63339734" vertical-offset="0" max-vertical-offset="6330">
+              <folding>
+                <element signature="e#22#36#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -64,32 +70,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show_1st_layer_filter_response.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/show_1st_layer_filter_response.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="13" selection-start="336" selection-end="336" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1590">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="show_1st_layer_filter_response2.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/show_1st_layer_filter_response2.py">
           <provider selected="true" editor-type-id="text-editor">
             <state line="49" column="0" selection-start="0" selection-end="4042" vertical-scroll-proportion="0.0" vertical-offset="386" max-vertical-offset="1950">
               <folding>
                 <element signature="e#23#34#0" expanded="true" />
+                <marker date="1400197743000" expanded="true" signature="855:3978" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="extract_saliency_map.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="extract_saliency_map.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/extract_saliency_map.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="97" column="22" selection-start="3373" selection-end="3373" vertical-scroll-proportion="0.4606526" vertical-offset="1215" max-vertical-offset="1995">
+            <state line="109" column="13" selection-start="3984" selection-end="3984" vertical-scroll-proportion="0.0" vertical-offset="1215" max-vertical-offset="1995">
               <folding>
                 <element signature="e#23#34#0" expanded="true" />
+                <marker date="1400198405000" expanded="true" signature="855:4056" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -119,6 +118,7 @@
             <state line="91" column="25" selection-start="3089" selection-end="3089" vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="1860">
               <folding>
                 <element signature="e#23#34#0" expanded="true" />
+                <marker date="1400197743000" expanded="true" signature="855:3816" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -142,7 +142,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/fast_saliency_network.py" />
         <option value="$PROJECT_DIR$/show_network.py" />
         <option value="$PROJECT_DIR$/print_output.py" />
         <option value="$PROJECT_DIR$/train_cifar_with_imgdrop.py" />
@@ -158,6 +157,7 @@
         <option value="$PROJECT_DIR$/train_cifar_mrelu.py" />
         <option value="$PROJECT_DIR$/show_1st_layer_filter_response2.py" />
         <option value="$PROJECT_DIR$/extract_saliency_map.py" />
+        <option value="$PROJECT_DIR$/train_with_dropout.py" />
       </list>
     </option>
   </component>
@@ -419,22 +419,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/train_cifar_unit.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="259" selection-end="455" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5370">
-          <folding>
-            <element signature="e#23#37#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/show_filters.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="9" selection-start="142" selection-end="142" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/myUtils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="340" column="0" selection-start="12202" selection-end="12202" vertical-scroll-proportion="0.0" vertical-offset="4704" max-vertical-offset="5250">
@@ -448,7 +432,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="29" column="50" selection-start="889" selection-end="889" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5400">
           <folding>
-            <element signature="e#22#36#0" expanded="true" />
+            <element signature="e#22#36#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -468,23 +452,9 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/layers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="385" column="28" selection-start="16208" selection-end="16208" vertical-scroll-proportion="0.0" vertical-offset="2934" max-vertical-offset="8115">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/show_1st_layer_filter_response.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="13" selection-start="336" selection-end="336" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1590">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/train_cifar.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="23" selection-start="0" selection-end="15302" vertical-scroll-proportion="0.0" vertical-offset="4218" max-vertical-offset="5190">
           <folding />
         </state>
       </provider>
@@ -503,6 +473,7 @@
         <state line="91" column="25" selection-start="3089" selection-end="3089" vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="1860">
           <folding>
             <element signature="e#23#34#0" expanded="true" />
+            <marker date="1400197743000" expanded="true" signature="855:3816" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -512,6 +483,7 @@
         <state line="49" column="0" selection-start="0" selection-end="4042" vertical-scroll-proportion="0.0" vertical-offset="386" max-vertical-offset="1950">
           <folding>
             <element signature="e#23#34#0" expanded="true" />
+            <marker date="1400197743000" expanded="true" signature="855:3978" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -539,9 +511,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/extract_saliency_map.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="97" column="22" selection-start="3373" selection-end="3373" vertical-scroll-proportion="0.4606526" vertical-offset="1215" max-vertical-offset="1995">
+        <state line="109" column="13" selection-start="3984" selection-end="3984" vertical-scroll-proportion="0.0" vertical-offset="1215" max-vertical-offset="1995">
           <folding>
             <element signature="e#23#34#0" expanded="true" />
+            <marker date="1400198405000" expanded="true" signature="855:4056" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="385" column="28" selection-start="16208" selection-end="16208" vertical-scroll-proportion="0.0" vertical-offset="2934" max-vertical-offset="8115">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train_cifar.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="45" selection-start="540" selection-end="540" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5190">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train_cifar_with_imgdrop.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="18167" vertical-scroll-proportion="0.0" vertical-offset="3825" max-vertical-offset="5955">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train_with_dropout.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="42" selection-start="694" selection-end="694" vertical-scroll-proportion="0.63339734" vertical-offset="0" max-vertical-offset="6330">
+          <folding>
+            <element signature="e#22#36#0" expanded="true" />
           </folding>
         </state>
       </provider>

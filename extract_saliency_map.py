@@ -107,7 +107,7 @@ def collect_filter_response(batch_size=128):
     whole_feature_output = whole_feature_output.reshape((whole_feature_output.shape[0],-1))
     print whole_feature_output.shape
     f = file(out_path+'saliency_map_for_training.pkl','wb')
-    cPickle.dump(whole_feature_output,f)
+    cPickle.dump(whole_feature_output,f,protocol=cPickle.HIGHEST_PROTOCOL)
     f.close()
         #not_i = numpy.array(range(10))
         #ind = not_i != class_i

@@ -12,7 +12,7 @@ from layers import LogisticRegression,HiddenLayer,LeNetConvPoolLayer,drop_out_la
 from myUtils import load_cifar_data
 import optparse
 
-def train_cifar(learning_rate_base=1,batch_size=128,n_epochs=200,test_frequency=1300, check_point_frequency=5000,show_progress_frequency=100):
+def train_cifar(learning_rate_base=1.0,batch_size=128,n_epochs=200,test_frequency=1300, check_point_frequency=5000,show_progress_frequency=100):
     check_point_path = '/home/chensi/mylocal/sichen/data/check_points/'
     parser = optparse.OptionParser()
     parser.add_option("-f",dest="filename", default='None')
@@ -125,10 +125,8 @@ def train_cifar(learning_rate_base=1,batch_size=128,n_epochs=200,test_frequency=
         layer2_b = theano.shared(params[3],borrow=True)
         layer3_W = theano.shared(params[4],borrow=True)
         layer3_b = theano.shared(params[5],borrow=True)
-        fc64_W = theano.shared(params[6],borrow=True)
-        fc64_b = theano.shared(params[7],borrow=True)
-        fc10_W = theano.shared(params[8],borrow=True)
-        fc10_b = theano.shared(params[9],borrow=True)
+        fc10_W = theano.shared(params[6],borrow=True)
+        fc10_b = theano.shared(params[7],borrow=True)
         print 'building model...'
 
         conv_pool1 = LeNetConvPoolLayer(rng=rng1,input=img_input,

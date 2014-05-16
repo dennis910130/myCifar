@@ -97,8 +97,12 @@ def collect_filter_response(batch_size=128):
             else:
                 x0[j,:] = thres - x0[j,:]
                 x0[j,:] = x0[j,:]*(x0[j,:]>0)
-
+            x0[j,:] = x0[j,:]-x0[j,:].min()
+            x0[j,:] *= 1/(x0[j,:].max()+1e-8)
+            x0[j,:] *= 256.
         whole_feature_output[:,i,:] = x0
+    whole_feature_output = numpy.floor(whole_feature_output).astype(int)
+    print whole_feature_output.dtype
     print whole_feature_output.shape
     whole_feature_output = whole_feature_output.reshape((whole_feature_output.shape[0],whole_feature_output.shape[1],32,32))
     f = file(out_path+'saliency_map_for_training.pkl','wb')

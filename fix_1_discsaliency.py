@@ -151,9 +151,8 @@ def train_cifar(learning_rate_base=0.01,batch_size=128,n_epochs=100,test_frequen
                                         momW=0.9,
                                         momB=0.9,
                                         wc=0.004,
-                                        name='conv2',
-                                        W1=layer2_W,
-                                        b1=layer2_b
+                                        name='conv2'
+
                                         )
         conv_pool3 = LeNetConvPoolLayer(rng=rng3,input=conv_pool2.output,
                                         filter_shape=(32,5,5,64),
@@ -166,9 +165,7 @@ def train_cifar(learning_rate_base=0.01,batch_size=128,n_epochs=100,test_frequen
                                         momW=0.9,
                                         momB=0.9,
                                         wc=0.004,
-                                        name='conv3',
-                                        W1=layer3_W,
-                                        b1=layer3_b
+                                        name='conv3'
                                         )
 
         layer4_input = conv_pool3.output.dimshuffle(3,0,1,2).flatten(2)

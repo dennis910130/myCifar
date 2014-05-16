@@ -96,22 +96,14 @@ def train_cifar(learning_rate_base=1.0,batch_size=128,n_epochs=200,test_frequenc
 
         layer4_input = conv_pool3.output.dimshuffle(3,0,1,2).flatten(2)
         #fc_64 = HiddenLayer(rng=rng4,input=layer4_input,n_in=64*4*4,n_out=64,initW=0.1,initB=0)
-        '''
-        fc_1 = HiddenLayer(rng=rng4,input=layer4_input,n_in=64*4*4,n_out=64,initW=0.1,initB=0,
-                            epsW=0.001,
-                            epsB=0.002,
-                            momW=0.9,
-                            momB=0.9,
-                            wc=0.03,
-                            name='fc1')
-        '''
+
         fc_2_input = drop_out_layer(rng1,input=layer4_input,p=0.5)
         fc_2 = LogisticRegression(input=fc_2_input,rng=rng5,n_in=64*4*4,n_out=10,initW=0.01,
                                    epsW=0.001,
                                     epsB=0.002,
                                     momW=0.9,
                                     momB=0.9,
-                                    wc=0.03,
+                                    wc=1.0,
                                     name='fc2')
     else:
         print 'resume training %s...' % options.filename
@@ -181,17 +173,7 @@ def train_cifar(learning_rate_base=1.0,batch_size=128,n_epochs=200,test_frequenc
 
         layer4_input = conv_pool3.output.dimshuffle(3,0,1,2).flatten(2)
         #fc_64 = HiddenLayer(rng=rng4,input=layer4_input,n_in=64*4*4,n_out=64,initW=0.1,initB=0)
-        '''
-        fc_1 = HiddenLayer(rng=rng4,input=layer4_input,n_in=64*4*4,n_out=64,initW=0.1,initB=0,
-                            epsW=0.001,
-                            epsB=0.001,
-                            momW=0.9,
-                            momB=0.9,
-                            wc=0.03,
-                            W1=fc64_W,
-                            b1=fc64_b,
-                            name='fc1')
-        '''
+
         fc_2_input = drop_out_layer(rng1,input=layer4_input,p=0.5)
 
         fc_2 = LogisticRegression(input=fc_2_input,rng=rng5,n_in=64*4*4,n_out=10,initW=0.01,
@@ -199,7 +181,7 @@ def train_cifar(learning_rate_base=1.0,batch_size=128,n_epochs=200,test_frequenc
                                     epsB=0.001,
                                     momW=0.9,
                                     momB=0.9,
-                                    wc=0.03,
+                                    wc=1.0,
                                     W=fc10_W,
                                     b=fc10_b,
                                     name='fc2'
@@ -246,13 +228,7 @@ def train_cifar(learning_rate_base=1.0,batch_size=128,n_epochs=200,test_frequenc
 
     layer4_input_test = conv_pool3_test.output.dimshuffle(3,0,1,2).flatten(2)
 
-    #fc_64 = HiddenLayer(rng=rng4,input=layer4_input,n_in=64*4*4,n_out=64,initW=0.1,initB=0)
-    '''
-    fc_1_test = HiddenLayer(rng=rng4,input=layer4_input_test,n_in=64*4*4,n_out=64,initW=0.1,initB=0,
-                        W1=fc_1.W,
-                        b1=fc_1.b,
-                        name='fc1')
-    '''
+
     fc_2_test = LogisticRegression(input=layer4_input_test,rng=rng5,n_in=64*4*4,n_out=10,initW=0.01,
                                 W=fc_2.W,
                                 b=fc_2.b,

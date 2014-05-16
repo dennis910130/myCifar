@@ -255,7 +255,7 @@ def train_cifar(learning_rate_base=1,batch_size=128,n_epochs=200,test_frequency=
                         b1=fc_1.b,
                         name='fc1')
     '''
-    fc_2_test = LogisticRegression(input=layer4_input_test.output,rng=rng5,n_in=64*4*4,n_out=10,initW=0.01,
+    fc_2_test = LogisticRegression(input=layer4_input_test,rng=rng5,n_in=64*4*4,n_out=10,initW=0.01,
                                 W=fc_2.W,
                                 b=fc_2.b,
                                 name='fc2')

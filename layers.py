@@ -543,3 +543,89 @@ class SaliencyConvLayer(object):
 
         # store parameters of this layer
         self.params = [self.W, self.b,self.Gamma,self.Beta,self.T]
+#####################################################################################
+#####################fix 1 layer#####################################################
+class Fix_1_discsaliency_layer(object):
+    """Pool Layer of a convolutional network """
+
+    def __init__(self, rng, input, filter_shape,alphas, image_shape,activation='relu', poolsize=(2,2),poolstride=2,pad=0,
+                 convstride=1,partial_sum=1,pooling='max',
+
+                 W1=None,b1=None, name='fixed_layer'):
+        #changes the bc01 to c01b
+        """
+        Allocate a LeNetConvPoolLayer with shared variable internal parameters.
+
+        :type rng: numpy.random.RandomState
+        :param rng: a random number generator used to initialize weights
+
+        :type input: theano.tensor.dtensor4
+        :param input: symbolic image tensor, of shape image_shape
+
+        :type filter_shape: tuple or list of length 4
+        :param filter_shape: (number of filters, num input feature maps,
+                              filter height,filter width)
+
+        :type image_shape: tuple or list of length 4
+        :param image_shape: (batch size, num input feature maps,
+                             image height, image width)
+
+        :type poolsize: tuple or list of length 2
+        :param poolsize: the downsampling (pooling) factor (#rows,#cols)
+        """
+
+        assert image_shape[0] == filter_shape[0]
+        self.input = input
+        self.name = name
+
+        self.W = W1
+
+        self.b = b1
+
+
+        print pooling
+        print activation
+
+        # convolve input feature maps with filters
+        #conv_out = conv.conv2d(input=input, filters=self.W,
+                #filter_shape=filter_shape, image_shape=image_shape)
+        #input_shuffled = input.dimshuffle(1,2,3,0)
+        #filters_shuffled = self.W.dimshuffle(1,2,3,0)
+        conv_op = FilterActs(stride=convstride,partial_sum=partial_sum,pad=pad)
+        #contiguous_input = gpu_contiguous(input_shuffled)
+        contiguous_input = gpu_contiguous(self.input)
+        #contiguous_filters = gpu_contiguous(filters_shuffled)
+        contiguous_filters = gpu_contiguous(self.W)
+        conv_out_shuffled = conv_op(contiguous_input,contiguous_filters)
+        conv_out_shuffled = T.abs_(conv_out_shuffled + self.b.dimshuffle(0,'x','x','x'))
+        alpha_0 = alphas
+        alpha_1 = T.mean(conv_out_shuffled,axis=2)
+        alpha_1 = T.mean(alpha_1,axis=1)
+        relu = lambda x:x*(x>0)
+        for i in range(conv_out_shuffled.shape[3]):
+
+            for j in range(conv_out_shuffled.shape[0]):
+                thres = T.log(alpha_0[j]/alpha_1[j,i])/(1./alpha_1[j,i]-1./alpha_0[j])
+                if alpha_0[j]<alpha_1[j,i]:
+                    conv_out_shuffled[i,:,:,j] = relu(conv_out_shuffled[i,:,:,j] - thres)
+                else:
+                    conv_out_shuffled[i,:,:,j] = relu(thres - conv_out_shuffled[i,:,:,j])
+
+
+
+
+
+
+
+        if pooling == 'max':
+            pool_op = MaxPool(ds=poolsize[0],stride=poolstride)
+            #pooled_out_shuffled = pool_op(conv_out_shuffled)
+            self.output = pool_op(conv_out_shuffled)
+
+        else:
+
+            side_length = image_shape[1]+2*pad+1-filter_shape[1]
+            self.output = mean_pool_c01b(conv_out_shuffled,pool_shape=poolsize,
+                                    pool_stride=(poolstride,poolstride),image_shape=(side_length,side_length))
+
+        self.params = [self.W, self.b]

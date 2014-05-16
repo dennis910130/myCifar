@@ -31,6 +31,7 @@ alphas_path = '/home/chensi/mylocal/sichen/data/class_response/alphas.pkl'
 def collect_filter_response(batch_size=128):
     alpha_file = open(alphas_path,'rb')
     alphas = cPickle.load(alpha_file)
+
     alpha_file.close()
     out_path = '/home/chensi/mylocal/sichen/data/cifar-10-batches-py/'
     params_file = open('current_best_params.pkl','rb')

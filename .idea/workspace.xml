@@ -28,7 +28,7 @@
       <file leaf-file-name="layers.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/layers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="615" column="0" selection-start="26211" selection-end="26211" vertical-scroll-proportion="0.7941681" vertical-offset="8612" max-vertical-offset="9390">
+            <state line="611" column="42" selection-start="26160" selection-end="26160" vertical-scroll-proportion="0.6655232" vertical-offset="8627" max-vertical-offset="9390">
               <folding />
             </state>
           </provider>
@@ -66,7 +66,7 @@
       <file leaf-file-name="fix_1_discsaliency.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fix_1_discsaliency.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="123" column="36" selection-start="5503" selection-end="5503" vertical-scroll-proportion="0.0" vertical-offset="3075" max-vertical-offset="5280">
+            <state line="123" column="36" selection-start="5503" selection-end="5503" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="5280">
               <folding>
                 <element signature="e#22#36#0" expanded="true" />
               </folding>
@@ -506,15 +506,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/train_with_dropout.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="630" selection-end="630" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5940">
-          <folding>
-            <element signature="e#22#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/train_cifar.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="65" column="48" selection-start="2374" selection-end="2374" vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="5190">
@@ -540,9 +531,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/train_with_dropout.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="0" selection-start="630" selection-end="630" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5940">
+          <folding>
+            <element signature="e#22#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/layers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="615" column="0" selection-start="26211" selection-end="26211" vertical-scroll-proportion="0.7941681" vertical-offset="8612" max-vertical-offset="9390">
+        <state line="611" column="42" selection-start="26160" selection-end="26160" vertical-scroll-proportion="0.6655232" vertical-offset="8627" max-vertical-offset="9390">
           <folding />
         </state>
       </provider>

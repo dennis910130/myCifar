@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f835edd-cd76-4137-a805-9cafd9dcc5db" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/layers.py" afterPath="$PROJECT_DIR$/layers.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fix_1_discsaliency.py" afterPath="$PROJECT_DIR$/fix_1_discsaliency.py" />
     </list>
     <ignored path="myCifar.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,10 +25,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="layers.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="layers.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/layers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="621" column="0" selection-start="26527" selection-end="26527" vertical-scroll-proportion="0.48542023" vertical-offset="8882" max-vertical-offset="9465">
+            <state line="618" column="0" selection-start="26524" selection-end="26524" vertical-scroll-proportion="0.0" vertical-offset="8747" max-vertical-offset="9465">
               <folding />
             </state>
           </provider>
@@ -74,10 +74,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fix_1_discsaliency.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="fix_1_discsaliency.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/fix_1_discsaliency.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="123" column="36" selection-start="5503" selection-end="5503" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="5280">
+            <state line="19" column="46" selection-start="667" selection-end="667" vertical-scroll-proportion="0.4473684" vertical-offset="30" max-vertical-offset="5310">
               <folding>
                 <element signature="e#22#36#0" expanded="true" />
               </folding>
@@ -155,8 +155,8 @@
         <option value="$PROJECT_DIR$/show_1st_layer_filter_response2.py" />
         <option value="$PROJECT_DIR$/train_with_dropout.py" />
         <option value="$PROJECT_DIR$/extract_saliency_map.py" />
-        <option value="$PROJECT_DIR$/fix_1_discsaliency.py" />
         <option value="$PROJECT_DIR$/layers.py" />
+        <option value="$PROJECT_DIR$/fix_1_discsaliency.py" />
       </list>
     </option>
   </component>
@@ -505,15 +505,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fix_1_discsaliency.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="123" column="36" selection-start="5503" selection-end="5503" vertical-scroll-proportion="0.0" vertical-offset="3075" max-vertical-offset="5280">
-          <folding>
-            <element signature="e#22#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/train_with_dropout.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="0" selection-start="630" selection-end="630" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5940">
@@ -541,8 +532,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/layers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="621" column="0" selection-start="26527" selection-end="26527" vertical-scroll-proportion="0.48542023" vertical-offset="8882" max-vertical-offset="9465">
+        <state line="618" column="0" selection-start="26524" selection-end="26524" vertical-scroll-proportion="0.0" vertical-offset="8747" max-vertical-offset="9465">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fix_1_discsaliency.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="46" selection-start="667" selection-end="667" vertical-scroll-proportion="0.4473684" vertical-offset="30" max-vertical-offset="5310">
+          <folding>
+            <element signature="e#22#36#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

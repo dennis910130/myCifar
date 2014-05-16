@@ -15,7 +15,9 @@ alphas_path = '/home/chensi/mylocal/sichen/data/class_response/alphas.pkl'
 def train_cifar(learning_rate_base=0.01,batch_size=128,n_epochs=100,test_frequency=1300, check_point_frequency=5000,show_progress_frequency=100):
     alpha_file = open(alphas_path,'rb')
     alphas = cPickle.load(alpha_file)
+
     alphas = numpy.mean(alphas,axis=0)
+    alphas = theano.shared(alphas,borrow=True)
     alpha_file.close()
     check_point_path = os.environ['CHECK_POINT_PATH']
     parser = optparse.OptionParser()

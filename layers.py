@@ -606,7 +606,7 @@ class Fix_1_discsaliency_layer(object):
 
             for j in range(32):
                 thres = T.log(alpha_0[j]/alpha_1[j,i])/(1./alpha_1[j,i]-1./alpha_0[j])
-                if alpha_1[j,i]>alpha_0[j]:
+                if T.gt(alpha_1[j,i],alpha_0[j]):
                     conv_out_shuffled[i,:,:,j] = relu(conv_out_shuffled[i,:,:,j] - thres)
                 else:
                     conv_out_shuffled[i,:,:,j] = relu(thres - conv_out_shuffled[i,:,:,j])

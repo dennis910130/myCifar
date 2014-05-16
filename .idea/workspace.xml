@@ -28,8 +28,19 @@
       <file leaf-file-name="layers.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/layers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="612" column="0" selection-start="26214" selection-end="26214" vertical-scroll-proportion="0.6912522" vertical-offset="8627" max-vertical-offset="9390">
+            <state line="615" column="0" selection-start="26285" selection-end="26285" vertical-scroll-proportion="0.7941681" vertical-offset="8612" max-vertical-offset="9405">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="myUtils.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/myUtils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="3375" max-vertical-offset="5250">
+              <folding>
+                <element signature="e#22#35#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -83,18 +94,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show_1st_layer_filter_response2.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/show_1st_layer_filter_response2.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="0" selection-start="0" selection-end="4042" vertical-scroll-proportion="0.0" vertical-offset="386" max-vertical-offset="1950">
-              <folding>
-                <element signature="e#23#34#0" expanded="true" />
-                <marker date="1400197743000" expanded="true" signature="855:3978" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="extract_saliency_map.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/extract_saliency_map.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -109,7 +108,7 @@
       <file leaf-file-name="utils.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="0" selection-start="356" selection-end="356" vertical-scroll-proportion="0.0" vertical-offset="92" max-vertical-offset="2130">
+            <state line="12" column="0" selection-start="356" selection-end="356" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2130">
               <folding />
             </state>
           </provider>
@@ -418,15 +417,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/train_cifar_vshape.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="50" selection-start="889" selection-end="889" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5400">
-          <folding>
-            <element signature="e#22#36#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/show_cifar_img.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="29" column="24" selection-start="348" selection-end="967" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
@@ -473,7 +463,7 @@
         <state line="49" column="0" selection-start="0" selection-end="4042" vertical-scroll-proportion="0.0" vertical-offset="386" max-vertical-offset="1950">
           <folding>
             <element signature="e#23#34#0" expanded="true" />
-            <marker date="1400197743000" expanded="true" signature="855:3978" placeholder="..." />
+            <marker date="1400197743000" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -488,13 +478,6 @@
     <entry file="file://$PROJECT_DIR$/params_estimation.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="80" selection-start="901" selection-end="901" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="356" selection-end="356" vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="2130">
           <folding />
         </state>
       </provider>
@@ -540,9 +523,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="0" selection-start="356" selection-end="356" vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="2130">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myUtils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="3375" max-vertical-offset="5250">
+          <folding>
+            <element signature="e#22#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/layers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="612" column="0" selection-start="26214" selection-end="26214" vertical-scroll-proportion="0.6912522" vertical-offset="8627" max-vertical-offset="9390">
+        <state line="615" column="0" selection-start="26285" selection-end="26285" vertical-scroll-proportion="0.7941681" vertical-offset="8612" max-vertical-offset="9405">
           <folding />
         </state>
       </provider>

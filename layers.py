@@ -602,6 +602,7 @@ class Fix_1_discsaliency_layer(object):
         alpha_1 = T.mean(conv_out_shuffled,axis=2)
         alpha_1 = T.mean(alpha_1,axis=1)
         relu = lambda x:x*(x>0)
+        '''
         for i in range(128):
 
             for j in range(32):
@@ -610,7 +611,10 @@ class Fix_1_discsaliency_layer(object):
                     conv_out_shuffled = T.set_subtensor(conv_out_shuffled[i,:,:,j],relu(conv_out_shuffled[i,:,:,j]-thres))
                 else:
                     conv_out_shuffled = T.set_subtensor(conv_out_shuffled[i,:,:,j],relu(thres - conv_out_shuffled[i,:,:,j]))
-
+        '''
+        thres = T.log(alpha_0.dimshuffle(0,'x')/alpha_1)/(1./alpha_1-1./alpha_0.dimshuffle(0,'x'))
+        thres = thres.dimshuffle(0,'x','x',1)
+        conv_out_shuffled = conv_out_shuffled*(conv_out_shuffled>thres)
 
 
 

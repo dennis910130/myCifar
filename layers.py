@@ -602,9 +602,9 @@ class Fix_1_discsaliency_layer(object):
         alpha_1 = T.mean(conv_out_shuffled,axis=2)
         alpha_1 = T.mean(alpha_1,axis=1)
         relu = lambda x:x*(x>0)
-        for i in range(conv_out_shuffled.shape[3]):
+        for i in range(128):
 
-            for j in range(conv_out_shuffled.shape[0]):
+            for j in range(32):
                 thres = T.log(alpha_0[j]/alpha_1[j,i])/(1./alpha_1[j,i]-1./alpha_0[j])
                 if alpha_0[j]<alpha_1[j,i]:
                     conv_out_shuffled[i,:,:,j] = relu(conv_out_shuffled[i,:,:,j] - thres)

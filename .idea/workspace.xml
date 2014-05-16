@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f835edd-cd76-4137-a805-9cafd9dcc5db" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fix_1_discsaliency.py" afterPath="$PROJECT_DIR$/fix_1_discsaliency.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train_with_dropout.py" afterPath="$PROJECT_DIR$/train_with_dropout.py" />
     </list>
     <ignored path="myCifar.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -63,10 +63,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="train_with_dropout.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="train_with_dropout.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/train_with_dropout.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="0" selection-start="630" selection-end="630" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5940">
+            <state line="216" column="55" selection-start="10569" selection-end="10569" vertical-scroll-proportion="5.6842103" vertical-offset="0" max-vertical-offset="5970">
               <folding>
                 <element signature="e#22#36#0" expanded="true" />
               </folding>
@@ -74,10 +74,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fix_1_discsaliency.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="fix_1_discsaliency.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fix_1_discsaliency.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="168" column="41" selection-start="7905" selection-end="7905" vertical-scroll-proportion="0.94736844" vertical-offset="1980" max-vertical-offset="5265">
+            <state line="148" column="15" selection-start="6788" selection-end="6788" vertical-scroll-proportion="0.0" vertical-offset="1980" max-vertical-offset="5265">
               <folding>
                 <element signature="e#22#36#0" expanded="true" />
               </folding>
@@ -153,10 +153,10 @@
         <option value="$PROJECT_DIR$/show_saliency_maps.py" />
         <option value="$PROJECT_DIR$/train_cifar_mrelu.py" />
         <option value="$PROJECT_DIR$/show_1st_layer_filter_response2.py" />
-        <option value="$PROJECT_DIR$/train_with_dropout.py" />
         <option value="$PROJECT_DIR$/extract_saliency_map.py" />
         <option value="$PROJECT_DIR$/layers.py" />
         <option value="$PROJECT_DIR$/fix_1_discsaliency.py" />
+        <option value="$PROJECT_DIR$/train_with_dropout.py" />
       </list>
     </option>
   </component>
@@ -364,7 +364,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1280" height="729" extended-state="0" />
+    <frame x="0" y="22" width="1280" height="729" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -505,15 +505,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/train_with_dropout.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="630" selection-end="630" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5940">
-          <folding>
-            <element signature="e#22#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="0" selection-start="356" selection-end="356" vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="2130">
@@ -539,7 +530,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/fix_1_discsaliency.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="168" column="41" selection-start="7905" selection-end="7905" vertical-scroll-proportion="0.94736844" vertical-offset="1980" max-vertical-offset="5265">
+        <state line="148" column="15" selection-start="6788" selection-end="6788" vertical-scroll-proportion="0.0" vertical-offset="1980" max-vertical-offset="5265">
+          <folding>
+            <element signature="e#22#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train_with_dropout.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="216" column="55" selection-start="10569" selection-end="10569" vertical-scroll-proportion="5.6842103" vertical-offset="0" max-vertical-offset="5970">
           <folding>
             <element signature="e#22#36#0" expanded="true" />
           </folding>

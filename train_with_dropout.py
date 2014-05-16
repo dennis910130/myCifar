@@ -66,8 +66,8 @@ def train_cifar(learning_rate_base=1.0,batch_size=128,n_epochs=200,test_frequenc
                                     wc=0.004,
                                     name='conv1'
                                     )
-
-        conv_pool2 = LeNetConvPoolLayer(rng=rng2,input=conv_pool1.output,
+        conv_pool2_input = drop_out_layer(rng2,conv_pool1.output,0.5)
+        conv_pool2 = LeNetConvPoolLayer(rng=rng2,input=conv_pool2_input,
                                         filter_shape=(32,5,5,32),
                                         image_shape=(32,16,16,batch_size),
                                         activation='relu',
@@ -80,7 +80,8 @@ def train_cifar(learning_rate_base=1.0,batch_size=128,n_epochs=200,test_frequenc
                                         momB=0.9,
                                         wc=0.004,
                                         name='conv2')
-        conv_pool3 = LeNetConvPoolLayer(rng=rng3,input=conv_pool2.output,
+        conv_pool3_input = drop_out_layer(rng3,conv_pool2.output,0.5)
+        conv_pool3 = LeNetConvPoolLayer(rng=rng3,input=conv_pool3_input,
                                         filter_shape=(32,5,5,64),
                                         image_shape=(32,8,8,batch_size),
                                         activation='relu',
@@ -137,8 +138,8 @@ def train_cifar(learning_rate_base=1.0,batch_size=128,n_epochs=200,test_frequenc
                                     W1=layer1_W,
                                     b1=layer1_b
                                     )
-
-        conv_pool2 = LeNetConvPoolLayer(rng=rng2,input=conv_pool1.output,
+        conv_pool2_input = drop_out_layer(rng2,conv_pool1.output,0.5)
+        conv_pool2 = LeNetConvPoolLayer(rng=rng2,input=conv_pool2_input,
                                         filter_shape=(32,5,5,32),
                                         image_shape=(32,16,16,batch_size),
                                         poolsize=(3,3),poolstride=2,pad=2,
@@ -154,7 +155,8 @@ def train_cifar(learning_rate_base=1.0,batch_size=128,n_epochs=200,test_frequenc
                                         W1=layer2_W,
                                         b1=layer2_b
                                         )
-        conv_pool3 = LeNetConvPoolLayer(rng=rng3,input=conv_pool2.output,
+        conv_pool3_input = drop_out_layer(rng3,conv_pool2.output,0.5)
+        conv_pool3 = LeNetConvPoolLayer(rng=rng3,input=conv_pool3_input,
                                         filter_shape=(32,5,5,64),
                                         image_shape=(32,8,8,batch_size),
                                         poolsize=(3,3),poolstride=2,pad=2,
@@ -200,7 +202,7 @@ def train_cifar(learning_rate_base=1.0,batch_size=128,n_epochs=200,test_frequenc
                                 poolsize=(3,3),poolstride=2,pad=2,
                                 convstride=1,initW=0.0001,initB=0,partial_sum=4,
                                 pooling='max',
-                                W1=conv_pool1.W,
+                                W1=conv_pool1.W*0.5,
                                 b1=conv_pool1.b,
                                 name='conv1'
                                 )
@@ -212,7 +214,7 @@ def train_cifar(learning_rate_base=1.0,batch_size=128,n_epochs=200,test_frequenc
                                     poolsize=(3,3),poolstride=2,pad=2,
                                     convstride=1,initW=0.01,initB=0,partial_sum=4,
                                     pooling='average',
-                                    W1=conv_pool2.W,
+                                    W1=conv_pool2.W*0.5,
                                     b1=conv_pool2.b,
                                     name='conv2')
     conv_pool3_test = LeNetConvPoolLayer(rng=rng3,input=conv_pool2_test.output,
